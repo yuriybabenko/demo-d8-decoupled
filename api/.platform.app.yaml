@@ -7,7 +7,7 @@
 name: 'api'
 
 # The runtime the application uses.
-type: 'php:7.3'
+type: 'php:7.4'
 
 # The relationships of the application with services or other applications.
 #
@@ -17,7 +17,7 @@ type: 'php:7.3'
 relationships:
     database: 'db:mysql'
     redis: 'cache:redis'
-#    solrsearch: "search:main"
+    solrsearch: "search:main"
 
 # Add additional PHP extensions.
 runtime:

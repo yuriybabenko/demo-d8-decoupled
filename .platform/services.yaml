@@ -10,13 +10,13 @@ db:
 cache:
     type: redis:5.0
 
-#search:
-#    type: solr:8.4
-#    disk: 256
-#    configuration:
-#      cores:
-#        maincore:
-#          conf_dir: !archive "solr_8.x_config/"
-#      endpoints:
-#        main:
-#          core: maincore
+search:
+    type: solr:8.4
+    disk: 256
+    configuration:
+      cores:
+        maincore:
+          conf_dir: !archive "solr_8.x_config/"
+      endpoints:
+        main:
+          core: maincore
