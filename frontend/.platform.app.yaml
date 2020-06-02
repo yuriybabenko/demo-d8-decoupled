@@ -1,0 +1,27 @@
+name: 'frontend'
+type: 'nodejs:10'
+disk: 512
+
+mounts:
+  '/tmp':
+    source: local
+    source_path: 'tmp'
+  '/.console':
+    source: local
+    source_path: 'console'
+
+web:
+  locations:
+    '/':
+      root: 'web'
+      expires: -1
+      allow: true
+      scripts: false
+  commands:
+    start: "node /app/web/server.js"
+
+hooks:
+  build: |
+    cd /app/web;
+    npm install;
+    ./build.sh;

@@ -1,0 +1,34 @@
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+
+# react app / frontend
+"https://www.{default}/":
+  type: redirect
+  to: "https://{default}/"
+
+"https://{default}/":
+  type: upstream
+  upstream: "frontend:http"
+  cache:
+    enabled: true
+    cookies: ['*']
+
+# drupal 8 / API
+"https://api.{default}/":
+    type: upstream
+    upstream: "api:http"
+    cache:
+      enabled: true
+      # Base the cache on the session cookie and custom Drupal cookies. Ignore all other cookies.
+      cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
+
+"https://api.{default}/jsonapi/":
+  type: upstream
+  upstream: "api:http"
+  cache:
+    enabled: true
+    default_ttl: 60
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
+    headers: ['Accept', 'Accept-Language', 'X-Language-Locale']
