@@ -16,8 +16,7 @@ type: 'php:7.2'
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
     database: 'db:mysql'
-    redis: 'cache:redis'
-    solrsearch: "search:main"
+#    redis: 'cache:redis'
 
 # Add additional PHP extensions.
 runtime:
