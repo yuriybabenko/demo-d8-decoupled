@@ -40,7 +40,7 @@ function NodeList() {
         <tr>
             <th>ID</th>
             <th>Type</th>
-            <th>Title</th>
+            {/*<th>Title</th>*/}
         </tr>
     );
 
@@ -71,6 +71,7 @@ function NodeRow(props) {
         <tr key={ node.id + '-tr' }>
             <td>{ node.id }</td>
             <td>{ node.type }</td>
+            {/*<td>{ node.title }</td>*/}
         </tr>
     );
 }
