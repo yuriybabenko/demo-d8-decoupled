@@ -29,7 +29,7 @@ function NodeList() {
     // empty JSON object.
     if (!nodes) {
         return (
-            <div class="error">
+            <div className="error">
                 No nodes available.
             </div>
         );
