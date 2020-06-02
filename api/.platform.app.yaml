@@ -17,7 +17,7 @@ type: 'php:7.3'
 relationships:
     database: 'db:mysql'
     redis: 'cache:redis'
-    solrsearch: "search:main"
+#    solrsearch: "search:main"
 
 # Add additional PHP extensions.
 runtime:

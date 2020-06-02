@@ -12,25 +12,8 @@ app.use(express.static(staticPath, {
     redirect: true, // Redirect directories to a "trailing /" path.
 }));
 
-// // Utility to assist in decoding a packed JSON variable.
-// function read_base64_json(varName) {
-//     try {
-//         return JSON.parse(new Buffer(process.env[varName], 'base64').toString());
-//     } catch (err) {
-//         throw new Error(`no ${varName} environment variable`);
-//     }
-// };
-//
-// // A simple variable.
-// let projectId = process.env.PLATFORM_PROJECT;
-//
-// // A JSON-encoded value.
-// let variables = read_base64_json('PLATFORM_VARIABLES');
-
 // Set up routes via Express' router. Optional handling for params, middleware.
 const router = express.Router();
-
-// let http = require('http');
 
 router.get('/api/nodes', function (req, res) {
     let domain = req.protocol + '://api.' + req.get('host');

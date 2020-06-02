@@ -68,11 +68,16 @@ function NodeRow(props) {
     const [node, setPropertyData] = useState(props.node);
 
     return (
-        <tr key={ node.id + '-tr' }>
-            <td>{ node.id }</td>
-            <td>{ node.type }</td>
-            <td>{ node.attributes.title }</td>
-        </tr>
+        <div>
+            <tr key={ node.id + '-tr' }>
+                <td>{ node.id }</td>
+                <td>{ node.type }</td>
+                <td>{ node.attributes.body.processed }</td>
+            </tr>
+            <tr>
+                <td colspan="3">{ node.body }</td>
+            </tr>
+        </div>
     );
 }
 
