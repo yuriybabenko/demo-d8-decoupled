@@ -71,7 +71,7 @@ function NodeRow(props) {
         <tr key={ node.id + '-tr' }>
             <td>{ node.id }</td>
             <td>{ node.type }</td>
-            <td>{ node.title }</td>
+            <td>{ node.attributes.title }</td>
         </tr>
     );
 }
