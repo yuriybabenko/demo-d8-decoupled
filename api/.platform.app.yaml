@@ -1,22 +1,8 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
-#
-# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
-
-# The name of this app. Must be unique within a project.
 name: 'api'
-
-# The runtime the application uses.
 type: 'php:7.2'
 
-# The relationships of the application with services or other applications.
-#
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form `<service name>:<endpoint name>`.
 relationships:
     database: 'db:mysql'
-#    redis: 'cache:redis'
 
 # Add additional PHP extensions.
 runtime:
@@ -70,26 +56,9 @@ web:
     # Specific parameters for different URL prefixes.
     locations:
         '/':
-            # The folder from which to serve static assets, for this location.
-            #
-            # This is a filesystem path, relative to the application root.
             root: 'web'
-
-            # How long to allow static assets from this location to be cached.
-            #
-            # Can be a time in seconds, or -1 for no caching. Times can be
-            # suffixed with "s" (seconds), "m" (minutes), "h" (hours), "d"
-            # (days), "w" (weeks), "M" (months, as 30 days) or "y" (years, as
-            # 365 days).
             expires: 5m
-
-            # Whether to forward disallowed and missing resources from this
-            # location to the application.
-            #
-            # Can be true, false or a URI path string.
             passthru: '/index.php'
-
-            # Deny access to static files in this location.
             allow: false
 
             # Rules for specific URI patterns.
